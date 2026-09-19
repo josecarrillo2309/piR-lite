@@ -1,8 +1,8 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://raw.githubusercontent.com/yourusername/project_piwirnas/master/nextflow_schema.json",
-    "title": "piRNA Discovery Pipeline Parameters",
-    "description": "Validation schema for the piRNA Discovery Pipeline",
+    "title": "piR-lite Parameters",
+    "description": "Validation schema for piR-lite",
     "type": "object",
     "definitions": {
         "input_output_options": {

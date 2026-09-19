@@ -1,4 +1,4 @@
-# piRNA Discovery Pipeline
+# piR-lite
 
 A robust, memory-efficient, and fully automated bioinformatics pipeline for the discovery and characterization of PIWI-interacting RNAs (piRNAs) from small RNA sequencing data.
 

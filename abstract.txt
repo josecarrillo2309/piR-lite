@@ -1,0 +1,17 @@
+Title: piR-lite: A Robust, Memory-Efficient Nextflow Workflow for the Characterization of PIWI-Interacting RNAs
+
+Authors: Jose Carrillo Garcia [Update with actual co-authors]
+
+Affiliations:
+[Update with your affiliations, e.g., Universidad Nacional Mayor de San Marcos]
+
+Corresponding authors: 
+Jose Carrillo Garcia ([Update with your email])
+
+PIWI-interacting RNAs (piRNAs) play crucial roles in gene regulation and transposon silencing across diverse organisms. However, the computational discovery and characterization of piRNAs from small RNA sequencing data often require substantial resources and complex workflows. Existing tools can be computationally expensive and difficult to deploy in resource-constrained environments, limiting their widespread use in rapid piRNA profiling.
+
+We developed piR-lite, a robust, fully automated, and highly memory-efficient Nextflow workflow that operates strictly within a 6GB RAM limit. The pipeline orchestrates read quality assessment (FastQC) and adapter removal (Cutadapt), followed by rigorous negative filtering against Rfam and miRBase using Bowtie 1 to remove structural and non-coding RNAs (rRNA, tRNA, miRNA). It maps the surviving reads to a reference genome and compares candidates against the piRBase database to classify known versus novel piRNAs. Furthermore, it integrates specialized statistical profiling of canonical piRNA features (1U and 10A sequence biases), a novel O(1) memory streaming analysis to detect the 10-nucleotide overlap signature characteristic of the Ping-Pong amplification cycle, and identifies genomic loci producing piRNA clusters.
+
+The pipeline was validated end-to-end on a pilot biological small RNA-seq dataset. Rigorous negative filtering successfully depleted structural RNAs, isolating over 1.2 million high-quality putative piRNAs per sample. Signature analysis confirmed the strong biological validity of these candidates, demonstrating canonical piRNA features with a 78.4% 1U bias and a 74.1% 10A bias. Furthermore, the memory-efficient streaming analysis detected a massive, statistically significant amplification peak precisely at the 10-nucleotide overlap (Z-score > 45), successfully capturing the Ping-Pong cycle signature. Downstream clustering mapped these candidates to highly dense genomic loci, and cross-referencing with piRBase resolved the dataset into >95% known piRNAs, effectively isolating several thousand novel, high-confidence piRNA candidates, all while strictly maintaining a peak memory footprint below the 6GB threshold.
+
+This fully automated pipeline provides a scalable, easily deployable solution for piRNA identification and characterization, addressing a key gap in resource-efficient small RNA analysis. By combining rigorous negative filtering, advanced signature profiling, and strict memory management, it offers researchers a reliable framework for exploring piRNA biology and Ping-Pong amplification in resource-limited computational settings. The pipeline and further information are available at: https://github.com/josecarrillo2309/piRNA-discovery-pipeline

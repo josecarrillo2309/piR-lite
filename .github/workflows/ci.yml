@@ -1,4 +1,4 @@
-name: piRNA Discovery Pipeline CI
+name: piR-lite CI
 
 on:
   push:
